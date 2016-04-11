@@ -17,6 +17,11 @@ import os
 FILE_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(FILE_DIR)
 
+# locale
+LOCALE_PATHS = (
+    os.path.join(FILE_DIR, 'locale'),
+)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -47,6 +52,7 @@ INSTALLED_APPS += [
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
